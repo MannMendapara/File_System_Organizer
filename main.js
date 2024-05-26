@@ -1,32 +1,17 @@
 #!/usr/bin/env node
-let help = require('./Commands/help')
-let tree = require('./Commands/tree')
-let organize = require('./Commands/organize')
+// Above Line of code used to make our commands Access Global.
+
+// import of command objects which contains the functions that perform the task according to the command.
+let help = require("./Commands/help");
+let tree = require("./Commands/tree");
+let organize = require("./Commands/organize");
 
 // Gives array of command line inputs.
 let inputArray = process.argv.slice(2);
 let command = inputArray[0];
 
 // Types of files and its categories.
-let types = {
-  media: ["mp4", "mkv"],
-  archives: ["zip", "rar", "7z", "tar", "ar", "iso", "xz"],
-  documents: [
-    "docx",
-    "doc",
-    "pdf",
-    "xlsx",
-    "xls",
-    "odt",
-    "ods",
-    "odg",
-    "odf",
-    "txt",
-    "ps",
-    "pptx",
-  ],
-  app: ["exe", "dng", "pkg", "deb"],
-};
+const types = require('./utility')
 
 // Switch statement for identify which command will have to execute.
 switch (command) {
