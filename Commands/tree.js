@@ -23,11 +23,11 @@ function treeHelper(dirpath, indent) {
   let isFile = fs.lstatSync(dirpath).isFile();
   if (isFile) {
     let filename = path.basename(dirpath);
-    console.log(indent + "|-- " + filename);
+    console.log(indent + "├── " + filename);
   } else {
     // If file then print else If Directory than Again check for the file and directory.
     let dirname = path.basename(dirpath);
-    console.log(indent + "|--> " + dirname);
+    console.log(indent + "└──> " + dirname);
     let childrens = fs.readdirSync(dirpath);
     for (let i = 0; i < childrens.length; i++) {
       let childpath = path.join(dirpath, childrens[i]);
