@@ -1,11 +1,10 @@
 // Help function that shows all the command.
 function helpfn() {
   console.log(`
-  List of all the Commands:
-      // node main.js tree path
-      // node main.js organize path
-      // node main.js help
-      `);
+    clous tree /Path_to_directory
+    clous organize /Path_to_directory
+    clous help
+    `);
 }
 
 module.exports = {
